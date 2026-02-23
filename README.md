@@ -92,33 +92,6 @@ compound-glass-clone/
 └── package.json
 ```
 
----
-
-## 🎬 Animation Decisions
-
-### Why `filter: blur()` on reveal?
-Blurring text from `4px → 0` as it reveals mimics the focus-pull of a camera lens. It adds premium polish without feeling gimmicky. The blur resolves before the user can read the text, so it never reduces legibility.
-
-### Why spring physics on cards?
-Linear or ease transitions feel mechanical. Spring physics (`stiffness: 300, damping: 28`) create organic resistance — like picking up a real card. The slight overshoot of `scaleInVariant` (0.88 → 1.0) reads as confidence, not jank.
-
-### Why `mode="wait"` on Testimonials pager?
-Without `wait`, the exit and enter animations run simultaneously, causing visual overlap. `wait` ensures the departing content fully exits before new content enters — essential for paginated interfaces.
-
-### Why stagger on the hero?
-Eye-tracking research shows users scan top-to-bottom. Staggering elements 120ms apart guides that scan deliberately, making the page feel orchestrated rather than chaotic.
-
----
-
-## 📊 Performance Notes
-
-- Dashboard preview uses SVG sparklines (zero canvas, zero canvas repaints)
-- `IntersectionObserver` for scroll-based animations — no scroll event listeners on the main thread
-- Testimonials grid uses `AnimatePresence` `mode="wait"` to prevent redundant render cycles
-- All `backdrop-filter` surfaces have `will-change: transform` implied by Framer Motion to prevent repaint cascades
-- `useScrolled` hook uses `passive: true` event listener to never block the scroll thread
-
----
 
 ## 🎯 Design Decisions vs Reference
 
