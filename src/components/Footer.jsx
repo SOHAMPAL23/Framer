@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import { motion } from 'framer-motion'
 import { Twitter, Github, Linkedin, ArrowUpRight } from 'lucide-react'
 
@@ -14,7 +15,7 @@ const socials = [
     { icon: Linkedin, label: 'LinkedIn', href: '#' },
 ]
 
-export default function Footer() {
+const Footer = memo(function Footer() {
     return (
         <footer
             className="relative overflow-hidden pt-16 pb-8 px-6 md:px-12 lg:px-24"
@@ -119,4 +120,6 @@ export default function Footer() {
             </div>
         </footer>
     )
-}
+})
+
+export default Footer

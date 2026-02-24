@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, memo, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, ChevronRight } from 'lucide-react'
 import { useScrolled } from '../hooks'
@@ -27,15 +27,15 @@ const mobileMenu = {
     exit: { opacity: 0, y: -8, scale: 0.97, transition: { duration: 0.18 } },
 }
 
-export default function GlassNavbar() {
+const GlassNavbar = memo(function GlassNavbar() {
     const scrolled = useScrolled(30)
     const [mobileOpen, setMobileOpen] = useState(false)
 
-    const scrollTo = (href) => {
+    const scrollTo = useCallback((href) => {
         setMobileOpen(false)
         const el = document.querySelector(href)
         if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    }
+    }, [])
 
     return (
         <header className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-4 px-4">
@@ -181,4 +181,6 @@ export default function GlassNavbar() {
             </div>
         </header>
     )
-}
+})
+
+export default GlassNavbar

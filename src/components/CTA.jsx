@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, memo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
 import { staggerContainer, fadeUpVariant, viewportOnce } from '../animations/variants'
@@ -87,7 +87,7 @@ const faqs = [
     },
 ]
 
-function FAQItem({ item, index }) {
+const FAQItem = memo(function FAQItem({ item, index }) {
     const [open, setOpen] = useState(false)
     return (
         <motion.div
@@ -125,9 +125,9 @@ function FAQItem({ item, index }) {
             </AnimatePresence>
         </motion.div>
     )
-}
+})
 
-export default function CTA() {
+const CTA = memo(function CTA() {
     return (
         <>
             {/* Pricing section */}
@@ -308,4 +308,6 @@ export default function CTA() {
             </section>
         </>
     )
-}
+})
+
+export default CTA

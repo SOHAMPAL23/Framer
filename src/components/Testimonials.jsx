@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, memo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react'
 import { staggerContainer, fadeUpVariant, scaleInVariant, viewportOnce } from '../animations/variants'
@@ -60,7 +60,7 @@ const testimonials = [
     },
 ]
 
-function StarRating({ count = 5 }) {
+const StarRating = memo(function StarRating({ count = 5 }) {
     return (
         <div className="flex gap-0.5">
             {Array.from({ length: count }).map((_, i) => (
@@ -68,9 +68,9 @@ function StarRating({ count = 5 }) {
             ))}
         </div>
     )
-}
+})
 
-function TestimonialCard({ t, active }) {
+const TestimonialCard = memo(function TestimonialCard({ t, active }) {
     return (
         <motion.div
             layout
@@ -100,9 +100,9 @@ function TestimonialCard({ t, active }) {
             </div>
         </motion.div>
     )
-}
+})
 
-export default function Testimonials() {
+const Testimonials = memo(function Testimonials() {
     const [page, setPage] = useState(0)
     const perPage = 3
     const pages = Math.ceil(testimonials.length / perPage)
@@ -227,4 +227,6 @@ export default function Testimonials() {
             </div>
         </section>
     )
-}
+})
+
+export default Testimonials

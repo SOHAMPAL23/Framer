@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, memo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowRight, ShoppingCart, Star, Zap, BarChart2, Target } from 'lucide-react'
 import {
@@ -74,7 +74,7 @@ const features = [
 ]
 
 // Dashboard UI for each tab
-function TabVisual({ feature }) {
+const TabVisual = memo(function TabVisual({ feature }) {
     const colors = { cart: '#1DB954', vip: '#3B82F6', pricing: '#F59E0B', deadstock: '#8B5CF6' }
     const color = colors[feature.id] || '#1DB954'
 
@@ -127,9 +127,9 @@ function TabVisual({ feature }) {
             </div>
         </div>
     )
-}
+})
 
-export default function FeatureCards() {
+const FeatureCards = memo(function FeatureCards() {
     const [activeTab, setActiveTab] = useState(0)
     const active = features[activeTab]
 
@@ -236,4 +236,6 @@ export default function FeatureCards() {
             </div>
         </section>
     )
-}
+})
+
+export default FeatureCards

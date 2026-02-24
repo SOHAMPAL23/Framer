@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import { motion } from 'framer-motion'
 import { ChevronRight, ArrowRight, TrendingUp, TrendingDown, ShoppingCart, Users } from 'lucide-react'
 import {
@@ -10,7 +11,7 @@ import {
 } from '../animations/variants'
 
 // Mini metric card for the dashboard preview
-function MetricCard({ label, value, change, isUp = true, icon: Icon, color }) {
+const MetricCard = memo(function MetricCard({ label, value, change, isUp = true, icon: Icon, color }) {
     return (
         <div className="widget-card min-w-0">
             <div className="flex items-start justify-between mb-2">
@@ -29,10 +30,10 @@ function MetricCard({ label, value, change, isUp = true, icon: Icon, color }) {
             </div>
         </div>
     )
-}
+})
 
 // Simplified sparkline SVG
-function Sparkline({ color = '#1DB954', up = true }) {
+const Sparkline = memo(function Sparkline({ color = '#1DB954', up = true }) {
     const d = up
         ? 'M0,30 C20,28 30,22 50,18 S80,10 100,6 S130,2 160,0'
         : 'M0,0 C20,4 40,10 60,16 S90,24 120,28 S150,30 160,30'
@@ -47,10 +48,10 @@ function Sparkline({ color = '#1DB954', up = true }) {
             <path d={d} fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" />
         </svg>
     )
-}
+})
 
 // Dashboard mockup
-function DashboardPreview() {
+const DashboardPreview = memo(function DashboardPreview() {
     return (
         <motion.div
             variants={dashboardVariant}
@@ -128,9 +129,9 @@ function DashboardPreview() {
             </div>
         </motion.div>
     )
-}
+})
 
-export default function Hero() {
+const Hero = memo(function Hero() {
     return (
         <section className="relative min-h-screen flex flex-col items-center justify-center pt-28 pb-16 px-6 overflow-hidden">
             {/* Background gradients */}
@@ -222,4 +223,6 @@ export default function Hero() {
             </motion.div>
         </section>
     )
-}
+})
+
+export default Hero

@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import { motion } from 'framer-motion'
 import { Check, X, Zap, BarChart2, Globe, ShoppingBag, Layers, Activity } from 'lucide-react'
 import { staggerContainer, fadeUpVariant, scaleInVariant, viewportOnce } from '../animations/variants'
@@ -58,7 +59,7 @@ const featureGrid = [
     },
 ]
 
-export default function Integrations() {
+const Integrations = memo(function Integrations() {
     return (
         <>
             {/* Comparison section */}
@@ -192,4 +193,6 @@ export default function Integrations() {
             </section>
         </>
     )
-}
+})
+
+export default Integrations
