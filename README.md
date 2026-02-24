@@ -125,9 +125,3 @@ npm install -g vercel
 vercel --prod
 ```
 *Alternatively, you can just link your GitHub repository directly in the Vercel dashboard for automatic CI/CD deployments connected to your `main` branch!*
-
----
-
-<div align="center">
-  <p>Built with ❤️ for clean, modern web design.</p>
-</div>
