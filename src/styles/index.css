@@ -6,7 +6,7 @@
   :root {
     --compound-bg: #000000;
     /* Super dark premium background */
-    --compound-green: #0099FF;
+    --compound-green: #1DB954;
     --compound-dark: #FFFFFF;
     --compound-border: rgba(255, 255, 255, 0.08);
   }
@@ -33,7 +33,7 @@
   }
 
   ::selection {
-    background: rgba(0, 153, 255, 0.25);
+    background: rgba(29, 185, 84, 0.25);
     color: #FFFFFF;
   }
 }
@@ -81,7 +81,7 @@
   }
 
   .green-gradient-text {
-    background: linear-gradient(135deg, #FFFFFF 0%, #0099FF 100%);
+    background: linear-gradient(135deg, #FFFFFF 0%, #1DB954 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -89,14 +89,14 @@
 
   .btn-primary {
     @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm text-white transition-all duration-300;
-    background: #0099FF;
-    box-shadow: 0 0 20px rgba(0, 153, 255, 0.35), 0 2px 8px rgba(0, 0, 0, 0.12);
+    background: #1DB954;
+    box-shadow: 0 0 20px rgba(29, 185, 84, 0.35), 0 2px 8px rgba(0, 0, 0, 0.12);
   }
 
   .btn-primary:hover {
     transform: translateY(-2px) scale(1.03);
-    background: #33ADFF;
-    box-shadow: 0 0 36px rgba(0, 153, 255, 0.5), 0 8px 20px rgba(0, 0, 0, 0.15);
+    background: #1ed760;
+    box-shadow: 0 0 36px rgba(29, 185, 84, 0.5), 0 8px 20px rgba(0, 0, 0, 0.15);
   }
 
   .btn-primary:active {
@@ -149,12 +149,12 @@
 
   .feature-card:hover {
     background: linear-gradient(135deg, rgba(51, 65, 85, 0.8) 0%, rgba(30, 41, 59, 0.6) 100%);
-    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6), 0 8px 32px rgba(0, 153, 255, 0.15), inset 0 2px 0 rgba(255, 255, 255, 0.2);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6), 0 8px 32px rgba(29, 185, 84, 0.15), inset 0 2px 0 rgba(255, 255, 255, 0.2);
     transform: translateY(-6px) scale(1.02);
   }
 
   .feature-card:hover::before {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 50%, rgba(0, 153, 255, 0.5) 100%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 50%, rgba(29, 185, 84, 0.5) 100%);
   }
 
   /* Dashboard widget card */
@@ -215,8 +215,8 @@
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: #0099FF;
-    box-shadow: 0 0 12px rgba(0, 153, 255, 0.7);
+    background: #1DB954;
+    box-shadow: 0 0 12px rgba(29, 185, 84, 0.7);
     animation: pulse 2s ease-in-out infinite;
   }
 
@@ -238,13 +238,13 @@
     left: 0;
     right: 0;
     height: 2px;
-    background: #0099FF;
+    background: #1DB954;
     border-radius: 1px;
   }
 
   /* Hover glow ring */
   .glow-ring:hover {
-    box-shadow: 0 0 0 3px rgba(0, 153, 255, 0.20), 0 0 24px rgba(0, 153, 255, 0.15);
+    box-shadow: 0 0 0 3px rgba(29, 185, 84, 0.20), 0 0 24px rgba(29, 185, 84, 0.15);
   }
 
   /* Section sash */
